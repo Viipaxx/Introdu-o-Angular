@@ -149,4 +149,50 @@
     - label="valor" -> cria o button com o valor passado
     - label="{{variavel}}" -> cria o button com o valor dentro da variavel passada pelo elemento pai
 
-##
+## Data binding
+
+#### data binding quando você passa uma parte da sua aplicação para a parte visual
+
+## Tipos de binding
+
+- Interpolação -> {{valor}}: quando o componente emite algo que vai ser renderizado no HTML
+- Property binding -> [propriedade]="valor": quando o componente emite algo que vai ser renderizado no HTML
+- Event bidnding -> (evento)="Handler": quando manda algum evento que dispara e realiza algo que vem da aplicação
+- two way data binding -> [(ngModel)]="propriedade": ida e volta (a aplicação e o HTML se comunica) 
+
+## Event binding
+
+#### Associação de dados
+
+#### Para usar o event binding você deve criar uma função no component quer você que realize
+
+    no button.component.ts:
+        getAlert(){ (função)
+            alert(this.label)
+        }
+    no button.component.html:
+        <button (click)="getAlert()">{{label}}</button> (evento de click)
+
+
+## Two Way data binding
+
+#### Quando você tem uma comunicação (associação) dos dois lados
+
+    no *.component.html
+    <input type="password"
+    placeholder="{{placeHolder}}"
+    (input)="placeHolder = $any($event.target).value">
+
+    <p>{{placeHolder}}</p>
+
+    <input
+    type="text"
+    [(ngModel)] = "senha"
+    >
+    <p>{{senha}}</p>
+
+## Style binding
+
+  <p [style.color]="color">{{senha}}</p>
+ 
+<hr>

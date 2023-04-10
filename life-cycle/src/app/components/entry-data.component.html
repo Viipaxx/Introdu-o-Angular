@@ -1,0 +1,14 @@
+
+<div>
+  <input type="password"
+  placeholder="{{placeHolder}}"
+  (input)="placeHolder = $any($event.target).value">
+
+  <p>{{placeHolder}}</p>
+
+  <input
+  type="text"
+  [(ngModel)] = "senha"
+  >
+  <p [style.color]="color">{{senha}}</p>
+</div>
