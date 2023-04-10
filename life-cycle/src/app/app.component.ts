@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, VERSION } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'life-cycle';
+  name = 'Angular ' + VERSION.major;
+  buttonLabel: string = 'CARRINHO';
+  buttonSecond: string = 'ADICIONAR A FAVORITOS';
 }
