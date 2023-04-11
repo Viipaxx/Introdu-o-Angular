@@ -7,6 +7,11 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
-  buttonLabel: string = 'CARRINHO';
-  buttonSecond: string = 'ADICIONAR A FAVORITOS';
+
+  isAliveCheckSampe: boolean = true;
+
+  disposeCheckSample():void {
+    this.isAliveCheckSampe = false
+  }
+
 }

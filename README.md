@@ -196,3 +196,35 @@
   <p [style.color]="color">{{senha}}</p>
  
 <hr>
+
+# Ciclo de vida de um componente
+
+## OnInit (interface/contrato)
+
+#### É basicamente a ação que será executada pelp componente quando ele for iniciado (quando ele for criado)
+
+    ngOnInit(): void{
+        console.log('Olá eu sou o nascimento de um componente')
+    }
+
+## OnChanges (interface/contrato)
+
+#### É a ação que será executada quando algum valor do componente for modificado
+
+    ngOnChanges(): void {
+        console.log('OnChanges')
+    }
+
+#### OnChange é executado primeiro que o OnInit
+#### O Onchange está atrelado a qualquer mudança que ocorra via @Input
+
+## DoCheck
+
+- checked -> content -> view
+    ngDoCheck(): void {
+        console.log('DoCheck')
+    }
+
+## OnDestroy
+
+#### Evento que é executado assim que o componente é destruido

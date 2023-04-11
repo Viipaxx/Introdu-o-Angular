@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnChanges, OnInit } from "@angular/core";
 
 
 @Component({
@@ -7,7 +7,7 @@ import { Component, Input } from "@angular/core";
   styleUrls: ['./button.component.css']
 })
 
-export class Button{
+export class Button implements OnInit, OnChanges{
 
   @Input() label: string = '';
 
@@ -16,6 +16,22 @@ export class Button{
   buttonNumber: number = 1;
   buttonObject = {
     label: 'Adicionar ao carrinho',
+  }
+  branco: string = 'white'
+
+  @Input() nome: string = ''
+
+  constructor() {
+    console.log(`Constructor ${this.nome}`)
+  }
+
+  ngOnInit(): void{
+    this.nome = this.nome + "X"
+    console.log(`OnInit ${this.nome}`)
+  }
+
+  ngOnChanges(): void {
+    console.log(`OnChanges ${this.nome}`)
   }
 
   getAlert(num: number){

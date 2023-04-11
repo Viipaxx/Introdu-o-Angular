@@ -8,6 +8,7 @@ import { HelloComponent } from './hello.component';
 import { MenuComponent } from './components/menu.component';
 import { Button } from './components/button.component';
 import { EntryDataComponent } from './components/entry-data.component';
+import { CheckSampleComponent } from './check-sample/check-sample.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { EntryDataComponent } from './components/entry-data.component';
     HelloComponent,
     MenuComponent,
     Button,
-    EntryDataComponent
+    EntryDataComponent,
+    CheckSampleComponent
   ],
   imports: [
     BrowserModule,

@@ -2,9 +2,10 @@
 <hello name="{{name}}"></hello>
 <menu-component></menu-component>
 <!-- <my-button></my-button> -->
-<my-button [label]="buttonLabel"></my-button>
-<my-button [label]="buttonSecond"></my-button>
-<my-button label="Noticia"></my-button>
+<my-button ></my-button>
+<my-button ></my-button>
 <h1>OLA MUNDAO</h1>
 <app-entry-data></app-entry-data>
+<app-check-sample *ngIf="isAliveCheckSampe"></app-check-sample>
+<button (click)="disposeCheckSample()">Destruir</button>
 <router-outlet></router-outlet>
