@@ -149,22 +149,22 @@
     - label="valor" -> cria o button com o valor passado
     - label="{{variavel}}" -> cria o button com o valor dentro da variavel passada pelo elemento pai
 
-## Data binding
+## Data biding
 
-#### data binding quando você passa uma parte da sua aplicação para a parte visual
+#### data biding quando você passa uma parte da sua aplicação para a parte visual
 
-## Tipos de binding
+## Tipos de biding
 
 - Interpolação -> {{valor}}: quando o componente emite algo que vai ser renderizado no HTML
-- Property binding -> [propriedade]="valor": quando o componente emite algo que vai ser renderizado no HTML
+- Property biding -> [propriedade]="valor": quando o componente emite algo que vai ser renderizado no HTML
 - Event bidnding -> (evento)="Handler": quando manda algum evento que dispara e realiza algo que vem da aplicação
-- two way data binding -> [(ngModel)]="propriedade": ida e volta (a aplicação e o HTML se comunica) 
+- two way data biding -> [(ngModel)]="propriedade": ida e volta (a aplicação e o HTML se comunica) 
 
-## Event binding
+## Event biding
 
 #### Associação de dados
 
-#### Para usar o event binding você deve criar uma função no component quer você que realize
+#### Para usar o event biding você deve criar uma função no component quer você que realize
 
     no button.component.ts:
         getAlert(){ (função)
@@ -174,7 +174,7 @@
         <button (click)="getAlert()">{{label}}</button> (evento de click)
 
 
-## Two Way data binding
+## Two Way data biding
 
 #### Quando você tem uma comunicação (associação) dos dois lados
 
@@ -191,7 +191,7 @@
     >
     <p>{{senha}}</p>
 
-## Style binding
+## Style biding
 
   <p [style.color]="color">{{senha}}</p>
  
@@ -228,3 +228,86 @@
 ## OnDestroy
 
 #### Evento que é executado assim que o componente é destruido
+#### ver ngIf
+
+<hr>
+
+# Diretivas estruturais
+
+#### alteram ou remodelam a estrutura da DOM de como as coisas estão sendo desenhadas
+
+## NgIf
+
+#### o ngIf é uma função que determina se o elemento vai ser mostrado ou não
+#### Recebe parametros em boolean (true/false)
+    <p *ngIf="true">vou aparecer</p>
+    <p *ngIf="false">não vou aparecer</p>
+
+#### obs.: O ngIf pode ser tanto a nivel de elemento quanto a nivel de componente
+
+## NgIf com Data Biding
+
+#### Quando você define no arquivo app.component.ts
+
+## NgIf com NgTemplate
+
+#### é um bloco que fica escondido até ser chamado
+
+## NgFor
+
+#### O ngFor é uma função que vai percorrer determinado valor e retornar com todos os valores dentro dele (caso seja mais de 1)
+    <li *ngFor="let p of produtos">{{ p }}</li>
+
+## Conceito de reatividade
+
+#### Torna reativo a função que esteja ligada a algo
+
+## ngFor com index
+    <li *ngFor="let p of produtos; let i = index">{{ p }}</li>
+
+#### faz com que posse ser pego a posição do elemento
+
+## Switch e Switch Case
+
+#### é a função de amostrar componentes de acordo com a instrução passada, se for um usuario mostra as funções de tal... é usado para criar blocos condicionais
+    <div [ngSwitch]="menuType">
+    <div *ngSwitchCase="'user'">
+        <h1>espaço do usuario</h1>
+        <ul>
+        <li> editar perfil</li>
+        <li> adicionar cartao</li>
+        </ul>
+    </div>
+
+    <div *ngSwitchCase="'admin'">
+        <h1>espaço do admin</h1>
+        <ul>
+        <li> editar perfil</li>
+        <li> adicionar cartao</li>
+        <li> gerenciar usuarios</li>
+        </ul>
+    </div>
+
+    <div *ngSwitchCase="'superuser'">
+        <h1>espaço do superuser</h1>
+        <ul>
+        <li> editar perfil</li>
+        <li> adicionar cartao</li>
+        <li> gerenciar usuarios</li>
+        <li> gerenciar admins</li>
+        </ul>
+    </div>
+    </div>
+
+<hr>
+<hr>
+
+# Diretivas de atributos 
+
+#### alteram o comportamento de um elemento em especifico ou de outra diretiva
+
+<hr>
+
+# Modulos
+
+#### Guarda componentes, diretivas, pipes e services

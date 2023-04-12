@@ -1,0 +1,28 @@
+<div class="login">
+
+  <h1>Cadastro</h1>
+
+  <label class="label-senha">
+    Email
+    <input class="senha" type="email" placeholder="example@e.com" required>
+  </label>
+
+  <label class="label-senha">
+    Senha
+    <input class="senha" type="password" (change)="analisarSenha()" [(ngModel)]="senha">
+  </label>
+
+  <label class="label-senha" [ngClass]="diferente">
+    Senha
+    <input class="senha" type="password" (change)="analisarSenha()"
+    [(ngModel)]="confirmarSenha">
+  </label>
+
+  <button
+  type="submit"
+  class="btnLogin"
+  [disabled]="habilitado"
+  >Acessar</button>
+
+</div>
+

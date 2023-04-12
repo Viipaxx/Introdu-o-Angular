@@ -1,0 +1,83 @@
+* {
+  color: white;
+  font-family: 'Segoe UI';
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  margin: 10%;
+  background-image: radial-gradient(#19a044, #103617);
+}
+
+.label-senha{
+  padding: 10px 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid;
+  border-radius: 10px;
+}
+
+.label-senha .senha {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  color: wheat;
+}
+
+.label-senha .senha::placeholder {
+  color: #ccc;
+}
+
+.diferente {
+  border-bottom: 1px solid red;
+  animation: loginErrado .2s infinite;
+  color: red
+}
+
+.diferente .senha {
+  color: red
+}
+
+.igual {
+  border-bottom: 1px solid rgb(8, 255, 8);
+}
+
+@keyframes loginErrado {
+  0% {
+    transform: translateX(2px);
+  }
+  50% {
+
+    transform: translateX(2px);
+  }
+  100% {
+
+    transform: translateX(0px);
+  }
+}
+
+.btnLogin {
+  border: none;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: rgb(24, 56, 84);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btnLogin:disabled {
+  background-color: #22222261;
+  color: #ccc;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}

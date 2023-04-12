@@ -1,0 +1,41 @@
+<h1>My app</h1>
+<p>card works!</p>
+<button>ola mundo</button>
+<ul>
+  <li *ngFor="let p of produtos; let i = index"
+    (click)="remover(i)"
+  >
+  {{i}} - {{ p }}
+  </li>
+  <input type="text" placeholder="Inserir novo produto" [(ngModel)]="produtoInserir">
+  <button (click)="adicionar(produtoInserir)">Adicionar novo produto</button>
+</ul>
+
+<div [ngSwitch]="menuType">
+  <div *ngSwitchCase="'user'">
+    <h1>espaço do usuario</h1>
+    <ul>
+      <li> editar perfil</li>
+      <li> adicionar cartao</li>
+    </ul>
+  </div>
+
+  <div *ngSwitchCase="'admin'">
+    <h1>espaço do admin</h1>
+    <ul>
+      <li> editar perfil</li>
+      <li> adicionar cartao</li>
+      <li> gerenciar usuarios</li>
+    </ul>
+  </div>
+
+  <div *ngSwitchCase="'superuser'">
+    <h1>espaço do superuser</h1>
+    <ul>
+      <li> editar perfil</li>
+      <li> adicionar cartao</li>
+      <li> gerenciar usuarios</li>
+      <li> gerenciar admins</li>
+    </ul>
+  </div>
+</div>
